@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GPCCR_EL3 - Granule Protection Check Control Register</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .register {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      border: 2px solid #000;
+      margin-bottom: 30px;
+    }
+    .bit-field {
+      width: 2.5%;
+      height: 40px;
+      border-left: 1px solid #aaa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      text-align: center;
+      font-size: 10px;
+      cursor: pointer;
+    }
+    .bit-field:hover {
+      background-color: lightgreen;
+    }
+    .bit-field span {
+      writing-mode: vertical-lr;
+      transform: rotate(180deg);
+    }
+    .highlight {
+      background-color: #b3d9ff;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    table, th, td {
+      border: 1px solid #aaa;
+    }
+    th, td {
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    .group {
+      background-color: #e6f7ff;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<h1>GPCCR_EL3 - Granule Protection Check Control Register (EL3)</h1>
+
+<div class="register">
+  <!-- Clickable bit fields from 63 to 0 -->
+  <div class="bit-field" title="RES0"><a href="#res0_63_24">63:24</a></div>
+  <div class="bit-field" title="LOGPTSZ"><a href="#logptsz">23:20</a></div>
+  <div class="bit-field" title="RES0"><a href="#res0_19">19</a></div>
+  <div class="bit-field" title="TBGPCD"><a href="#tbgpcd">18</a></div>
+  <div class="bit-field" title="GPCP"><a href="#gpcp">17</a></div>
+  <div class="bit-field" title="GPC"><a href="#gpc">16</a></div>
+  <div class="bit-field" title="PGS"><a href="#pgs">15:14</a></div>
+  <div class="bit-field" title="SH"><a href="#sh">13:12</a></div>
+  <div class="bit-field" title="ORGN"><a href="#orgn">11:10</a></div>
+  <div class="bit-field" title="IRGN"><a href="#irgn">9:8</a></div>
+  <div class="bit-field" title="RES0"><a href="#res0_7_3">7:3</a></div>
+  <div class="bit-field" title="PPS"><a href="#pps">2:0</a></div>
+</div>
+
+<h2>Field Descriptions</h2>
+<table>
+  <tr class="group"><td colspan="5">RES0</td></tr>
+  <tr id="res0_63_24"><td>Bits [63:24]</td><td>0</td><td>RES0</td><td>Reserved</td><td>Read as zero</td></tr>
+  <tr id="res0_19"><td>Bit [19]</td><td>0</td><td>RES0</td><td>Reserved</td><td>Read as zero</td></tr>
+  <tr id="res0_7_3"><td>Bits [7:3]</td><td>0</td><td>RES0</td><td>Reserved</td><td>Read as zero</td></tr>
+
+  <tr class="group"><td colspan="5">LOGPTSZ</td></tr>
+  <tr id="logptsz"><td>Bits [23:20]</td><td>RO</td><td>Read-Only</td><td>Level 0 GPT entry size</td><td>Specifies the number of least-significant address bits protected by each GPT entry</td></tr>
+
+  <tr class="group"><td colspan="5">TBGPCD</td></tr>
+  <tr id="tbgpcd"><td>Bit [18]</td><td>0</td><td>R/W</td><td>Trace Buffer GPC Disable</td><td>Controls Trace Buffer Unit GPC behavior</td></tr>
+
+  <tr class="group"><td colspan="5">GPCP</td></tr>
+  <tr id="gpcp"><td>Bit [17]</td><td>Arch UNKNOWN</td><td>R/W</td><td>Granule Protection Check Priority</td><td>Sets priority of fault reporting for GPC</td></tr>
+
+  <tr class="group"><td colspan="5">GPC</td></tr>
+  <tr id="gpc"><td>Bit [16]</td><td>0</td><td>R/W</td><td>Granule Protection Check Enable</td><td>Enables or disables granule protection checks</td></tr>
+
+  <tr class="group"><td colspan="5">PGS</td></tr>
+  <tr id="pgs"><td>Bits [15:14]</td><td>Arch UNKNOWN</td><td>R/W</td><td>Physical Granule Size</td><td>Specifies granule size used in physical address translation</td></tr>
+
+  <tr class="group"><td colspan="5">SH</td></tr>
+  <tr id="sh"><td>Bits [13:12]</td><td>Arch UNKNOWN</td><td>R/W</td><td>Shareability Attribute</td><td>Defines shareability for GPT fetches</td></tr>
+
+  <tr class="group"><td colspan="5">ORGN</td></tr>
+  <tr id="orgn"><td>Bits [11:10]</td><td>Arch UNKNOWN</td><td>R/W</td><td>Outer Cacheability</td><td>Defines outer cache behavior for GPT fetches</td></tr>
+
+  <tr class="group"><td colspan="5">IRGN</td></tr>
+  <tr id="irgn"><td>Bits [9:8]</td><td>Arch UNKNOWN</td><td>R/W</td><td>Inner Cacheability</td><td>Defines inner cache behavior for GPT fetches</td></tr>
+
+  <tr class="group"><td colspan="5">PPS</td></tr>
+  <tr id="pps"><td>Bits [2:0]</td><td>Arch UNKNOWN</td><td>R/W</td><td>Protected Physical Address Size</td><td>Indicates protected memory address size range</td></tr>
+</table>
+
+</body>
+</html>
